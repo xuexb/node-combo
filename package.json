@@ -2,5 +2,8 @@
   "name": "nodejs-static",
   "description": "一个nodejs的静态服务端",
   "version": "1.0.0",
-  "author": "xieliang"
+  "author": "xieliang",
+  "css_min": true,
+  "cache": true,
+  "port": 80
 }
