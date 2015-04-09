@@ -2,7 +2,9 @@ var http = require('http');
 var Fs = require('fs');
 var Path = require('path');
 
+
 var Config = require('./package.json');
+var cache = require('./lib/cache');
 
 var mine = {
     "css": "text/css",
@@ -28,7 +30,8 @@ var mine = {
 
 var server = http.createServer(function(request, response) {
     var url = request.url.substr(1),
-        result = '';
+        result = '',
+        url_data;
 
     //如果不包含？？则认为不需要处理
     if (url.indexOf('??') === -1) {
@@ -40,22 +43,26 @@ var server = http.createServer(function(request, response) {
         return false;
     }
 
+    //如果有缓存
+    if(Config.cache){
+
+        //如果命中
+        if(cache.check(url, response) === true){
+            return false;
+        }
+    }
+
     //路径数组
-    url = require('./lib/url')(url);
+    url_data = require('./lib/url')(url);
+
+
+    // console.log(url_data);
 
     //遍历路径 
-    url.forEach(function(value){
-        var ext = Path.extname(value);
-        if(ext){
-            ext = ext.slice(1);
-        } else {
-            return;
-        }
-
-
+    url_data.files.forEach(function(value){
         //如果文件存在
-        if(Fs.existsSync(value)){
-            result += require('./lib/load/'+ ext)(value);
+        if(Fs.existsSync(value.path)){
+            result += require('./lib/load/'+ value.ext)(value);
         }
     });
 
@@ -65,7 +72,11 @@ var server = http.createServer(function(request, response) {
         });
         response.end('<h1>404</h1>');
     } else {
-        response.writeHead(404, {
+        if(Config.cache){
+            cache.write(url, result);
+        }
+
+        response.writeHead(200, {
             'Content-Type': 'text/plain'
         });
         response.end(result);

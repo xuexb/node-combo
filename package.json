@@ -3,7 +3,12 @@
   "description": "一个nodejs的静态服务端",
   "version": "1.0.0",
   "author": "xieliang",
-  "css_min": true,
   "cache": true,
-  "port": 80
+  "port": 80,
+  "devDependencies": {
+    "cmd-util": "*",
+    "cssmin": "*",
+    "MD5": "*",
+    "uglify-js": "*"
+  }
 }
