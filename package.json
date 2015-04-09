@@ -5,6 +5,10 @@
   "author": "xieliang",
   "cache": true,
   "port": 80,
+  "alias": {
+    "a": "html??site/index",
+    "zepto": "??html/lib/zepto"
+    },
   "devDependencies": {
     "cmd-util": "*",
     "cssmin": "*",

@@ -1,39 +1,23 @@
 var http = require('http');
-var Fs = require('fs');
-var Path = require('path');
+var fs = require('fs');
 
 
-var Config = require('./package.json');
+var config = require('./package.json');
 var cache = require('./lib/cache');
 
 var mine = {
     "css": "text/css",
-    "gif": "image/gif",
-    "html": "text/html",
-    "ico": "image/x-icon",
-    "jpeg": "image/jpeg",
-    "jpg": "image/jpeg",
     "js": "text/javascript",
-    "json": "application/json",
-    "pdf": "application/pdf",
-    "png": "image/png",
-    "svg": "image/svg+xml",
-    "swf": "application/x-shockwave-flash",
-    "tiff": "image/tiff",
-    "txt": "text/plain",
-    "wav": "audio/x-wav",
-    "wma": "audio/x-ms-wma",
-    "wmv": "video/x-ms-wmv",
-    "xml": "text/xml"
-};
+}
 
 
 var server = http.createServer(function(request, response) {
     var url = request.url.substr(1),
         result = '',
-        url_data;
+        url_data, alias;
 
-    //如果不包含？？则认为不需要处理
+    //如果不包含??则认为不需要处理
+    //需要nginx代理
     if (url.indexOf('??') === -1) {
         response.writeHead(401, {
             'Content-Type': 'text/plain'
@@ -43,8 +27,10 @@ var server = http.createServer(function(request, response) {
         return false;
     }
 
+    url = require('./lib/alias')(url);
+
     //如果有缓存
-    if(Config.cache){
+    if(config.cache){
 
         //如果命中
         if(cache.check(url, response) === true){
@@ -56,32 +42,32 @@ var server = http.createServer(function(request, response) {
     url_data = require('./lib/url')(url);
 
 
-    // console.log(url_data);
-
     //遍历路径 
     url_data.files.forEach(function(value){
         //如果文件存在
-        if(Fs.existsSync(value.path)){
-            result += require('./lib/load/'+ value.ext)(value);
+        if(fs.existsSync(value.path)){
+            result += require('./lib/load/'+ url_data.type)(value);
         }
     });
 
+    //如果为404
     if(result === ''){
         response.writeHead(404, {
             'Content-Type': 'text/plain'
         });
         response.end('<h1>404</h1>');
     } else {
-        if(Config.cache){
-            cache.write(url, result);
+        //如果需要缓存，则写入文件
+        if(config.cache){
+            cache.write(url, result, url_data.type, mine[url_data.type]);
         }
 
         response.writeHead(200, {
-            'Content-Type': 'text/plain'
+            'Content-Type': mine[url_data.type]
         });
         response.end(result);
     }
     
     return;
 });
-server.listen(Config.port);
+server.listen(config.port);
