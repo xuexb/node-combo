@@ -1,7 +1,7 @@
 {
   "name": "nodejs-combo",
   "description": "nodejs的静态合并",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "xieliang",
   "devDependencies": {
     "cmd-util": "*",
