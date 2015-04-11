@@ -1,10 +1,5 @@
-/**
- * 模块名称
- * @author xieliang
- * @email admin@xuexb.com
- */
+var combo = require('./index');
 
-define(function(require){
-    'use strict';
-    var a = require('./a');
+
+combo({
 });

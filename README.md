@@ -1,6 +1,6 @@
-# nodejs-static
+# node-combo
 
-一个nodejs的静态服务端
+nodejs的静态合并
 
 ## 故事
 
