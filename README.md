@@ -87,4 +87,3 @@ nodejs的静态合并
 * debug功能
 * cache管理
 * 压缩开关
-* npm发布
