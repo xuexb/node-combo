@@ -8,5 +8,25 @@
     "cssmin": "*",
     "MD5": "*",
     "uglify-js": "*"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuexb/node-combo.git"
+  },
+  "keywords": [
+    "combo",
+    "cmd"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuexb/node-combo/issues"
+  },
+  "homepage": "https://github.com/xuexb/node-combo"
 }
