@@ -1,9 +1,15 @@
 {
   "name": "node-combo",
   "description": "nodejs的静态合并",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "xieliang",
   "devDependencies": {
+    "cmd-util": "*",
+    "cssmin": "*",
+    "MD5": "*",
+    "uglify-js": "*"
+  },
+  "dependencies": {
     "cmd-util": "*",
     "cssmin": "*",
     "MD5": "*",
