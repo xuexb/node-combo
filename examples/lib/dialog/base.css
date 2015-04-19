@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+
+/*弹出层*/
+
+.ui-dialog-tips-icon,.ui-dialog-close{
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAA8CAYAAABmdppWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzBBMjAxMUE1OTkzMTFFNDg5RjZBQjYxMUQ3OEQxN0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzBBMjAxMUI1OTkzMTFFNDg5RjZBQjYxMUQ3OEQxN0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3MEEyMDExODU5OTMxMUU0ODlGNkFCNjExRDc4RDE3RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3MEEyMDExOTU5OTMxMUU0ODlGNkFCNjExRDc4RDE3RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqIotjEAAAIVSURBVHja7Je7SgNBFIY3cUtJ6SUkYgq7IEGxEOwiIhJQEzVgYWNjaTS1TyAx4BtYqrlYBNGYJxAtItgqGi+1IAhq9JzlDAzrzOy4m0JhD/yQuX3ssnv+PxsoP68akoqCZkFZUAL0CroAHYOqoJboUFAwFwadge5Au6AJUDeoFzRDc/e0J+wExAMPoKThXEnaOyMD4kLN+H3VeCgDRlzCeGiEB5YN71VlwEHQmAtAETTAjUdBMQRmXMI2QTnbfAaBaZewbQFwHoFxwQtdlMB2FDCs4SB1AF8bdKgogOUVMKtM0BWon5tjmxH6RWMtGFQTgaegKdsCO4SQOuhEA4ZVwVsuSRZzBKlrwrBKCLwFnSug75owdKIb1inpDnTKHN966G0pD7AU88egrcGXXMCyvLHY/fCAXKOhAWpQE+zb30N7oWlOkmksUAyM0Nol6Ah0SA/z54u9NX0tu4JP0Bv9blNHvdDch+xQIJ4YF2XKnkYM4C2vgB79TBFmisoTRfbvmCkyT1TZv5UppiRTeE/EWtewfytTTIUx2KGGA8zKFFOQKSqoky8KM8VTiTJFFkwsEgzFVUozRZVyKmilq6cv+sQ9RScYNn6I1kI05mtNlikFxQNg4VUQZQpzmwj9K/VS2F0tP1M6kCnNoVhnM6W9uOxnip8pfqb8/0yRfafIYMz+87RH+zvFfaaQ2/iZ8ocy5VuAAQCfH9Kq9FtUMgAAAABJRU5ErkJggg==");
+background-repeat:no-repeat;
+}
+
+
+.ui-dialog-outer,
+.ui-dialog-outer table,
+.ui-dialog-outer p{
+    padding:0;margin:0;
+}
+
+/*弹出层*/
+.ui-dialog-outer { text-align:left; outline:none;font-size:14px;position:relative;}
+.ui-dialog-border{ border:0 none; margin:0; border-collapse:collapse;}
+/*.ui-dialog-header, .ui-dialog-footer { padding:0; }*/
+.ui-dialog-iframe .ui-dialog-content{height:100%;background:#fff url('http://static.jiapai.cc/res/img/loading-32-32.gif') center center no-repeat;}
+.ui-dialog-iframe iframe{width: 100%;height: 100%;}
+/*标题栏*/
+.ui-dialog-header{ position:relative;/*  height:36px; */ z-index:100;}
+.ui-dialog-title { overflow:hidden;cursor:default;height:36px; line-height:36px;color:#333;padding:0 20px;background-color:#f2f2f2;}
+.ui-dialog-close{display:block; position: absolute;overflow:hidden;right: 10px;top:8px;height:20px;width: 20px;text-indent:-9999em;cursor:pointer;background-position:0 -20px;}
+.ui-dialog-close:hover{text-decoration:none;}
+/*loading*/
+.ui-dialog-loading {width:80px;height: 50px;overflow: hidden;background: url('http://static.jiapai.cc/res/img/loading-32-32.gif') no-repeat 30px center;line-height: 50px;padding-left: 80px;font-size: 16px;}
+/*按钮组*/
+.ui-dialog-buttons{padding:20px; text-align:center; white-space:nowrap;font-size:0;}
+.ui-dialog-button{user-select:none;-moz-user-select: none;-webkit-user-select: none; -ms-user-select: none;margin-left:20px;cursor: pointer; display: inline-block; text-align: center;height:30px;line-height:30px;padding:0 20px;width:auto;background-color:#adaeb0;color:#fff;font-size:14px;border-radius:3px;text-decoration:none;}
+.ui-dialog-buttons a:first-child{margin-left:0;}
+.ui-dialog-button:hover{background-color:#999;text-decoration:none;}
+/*无效按钮*/
+.ui-dialog-button-disabled,.ui-dialog-button-disabled:hover,.ui-dialog-button-disabled:active{cursor:default;color:#666;background-color:#ddd;filter:alpha(opacity=50); opacity:.5;text-decoration:none;}
+/*高亮*/
+.ui-dialog-button-on{background-color:#fe555a;color:#fff;}
+.ui-dialog-button-on:hover{background-color:#e64348;color:#fff;}
+/*遮罩*/
+.ui-dialog-mask { background-color:#000; filter:alpha(opacity=30); opacity:0.3; }
+/*内部一个边框*/
+.ui-dialog-inner{background-color:#fff;border:1px solid #bab0b8; }
+/*没有标题*/
+.ui-dialog-noTitle .ui-dialog-title { display:none; }
+/*视觉*/
+@media screen and (min-width:0) {
+    .ui-dialog-outer { -webkit-transform: scale(0); transform: scale(0); -webkit-transition: -webkit-transform .2s ease-in-out; transition: transform .2s ease-in-out; }
+    .ui-dialog-show .ui-dialog-outer{ -webkit-transform: scale(1); transform: scale(1); }
+}
+/*扩展开始*/
+/*alert*/
+.ui-dialog-alert .ui-dialog-content{text-align:center;padding-top:30px;padding-bottom:20px;font-size:14px;}
+.ui-dialog-alert.ui-dialog-noTitle .ui-dialog-content{padding-top:40px;}
+.ui-dialog-alert .ui-dialog-inner{border:none;}
+
+
+/*简单提示*/
+.ui-dialog-tips .ui-dialog-inner{
+    border-color:#898989;
+}
+.ui-dialog-tips .ui-dialog-content{padding:18px 30px 18px 46px;color:#333;}
+.ui-dialog-tips .ui-dialog-header{display:none;}
+.ui-dialog-tips-icon{position:absolute;left:16px;top:20px;overflow:hidden;display:block;width:20px;height:20px;}
+.ui-dialog-tips-success-icon{background-position:0 0;}
+.ui-dialog-tips-error-icon{background-position:0 -40px;}
+
+/*fix*/
+.ui-dialog-content,.ui-dialog-inner{position:relative;}

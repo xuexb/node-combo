@@ -1,7 +1,7 @@
 var combo = require('./index');
 
 combo({
-    cache: true,
+    cache: false,
     port: 80,
     nginx: false,
 });

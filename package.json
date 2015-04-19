@@ -1,7 +1,7 @@
 {
   "name": "node-combo",
   "description": "nodejs的静态合并",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "author": "xieliang",
   "devDependencies": {
     "cmd-util": "*",
@@ -20,7 +20,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "npm install && node test.js"
   },
   "repository": {
     "type": "git",

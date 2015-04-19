@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>同步加载</title>
+    <script type="text/javascript">
+        var __load = new Date().getTime();
+    </script>
+</head>
+<body>
+    
+    <h1>
+        加载中...
+    </h1>
+
+    <div class="box"></div>
+
+
+    <p>
+        同步demo1版本
+    </p>
+    
+
+    <!-- seajs -->
+    <script type="text/javascript" src="../seajs/sea.js?v=123" id="seajsnode"></script>
+    <script type="text/javascript" src="../seajs/sea-config.js"></script>
+    <script type="text/javascript" src="../seajs/sea-style.js"></script>
+
+    <!-- 同步加载 -->
+    <script type="text/javascript" src="../??lib/jquery,lib/dialog/base,lib/dialog/base.css,lib/dialog/base.tpl,demo1/base.tpl,demo1/base"></script>
+
+    <script type="text/javascript">
+        seajs.use('demo1/base');
+    </script>
+</body>
+</html>

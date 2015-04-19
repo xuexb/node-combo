@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>默认异步加载</title>
+    <script type="text/javascript">
+        var __load = new Date().getTime();
+    </script>
+</head>
+<body>
+    
+    <h1>
+        加载中...
+    </h1>
+
+    <div class="box"></div>
+
+    <p>
+        注： 因seajs加载tpl跨域问题，要先把tpl文件转换为js
+    </p>
+
+    <p>
+        这个demo只是加载一个自己的js，这个js里加载jquery和一个弹层插件（包括js,css,tpl），完成页面逻辑
+    </p>
+    
+    <!-- seajs -->
+    <script type="text/javascript" src="../seajs/sea.js?v=123" id="seajsnode"></script>
+    <script type="text/javascript" src="../seajs/sea-config.js"></script>
+    <script type="text/javascript" src="../seajs/sea-style.js"></script>
+
+
+    <script type="text/javascript">
+        seajs.use('demo1/base');
+    </script>
+</body>
+</html>
