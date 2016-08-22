@@ -2,13 +2,7 @@
   "name": "node-combo",
   "description": "nodejs的静态合并",
   "version": "2.1.0",
-  "author": "xieliang",
-  "devDependencies": {
-    "cmd-util": "*",
-    "cssmin": "*",
-    "MD5": "*",
-    "uglify-js": "*"
-  },
+  "author": "xiaowu",
   "dependencies": {
     "cmd-util": "*",
     "cssmin": "*",
@@ -16,11 +10,8 @@
     "uglify-js": "*"
   },
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "npm install && node test.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
